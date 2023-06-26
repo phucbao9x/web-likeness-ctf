@@ -50,7 +50,7 @@ Khi máy chủ hoạt động ta thấy rằng nó sẽ:
 
 Suy ra mục tiêu có thể được chinh phục với [SQL Injection](https://en.wikipedia.org/wiki/SQL_injection).
 
-Tuy nhiên, mình cần thêm nhiều thông tin hơn cho cuộc tấn công, nào quan sát quá trình hoạt động khi server nhận được các request từ client qua các **routes** do lập trình viên tạo ra
+Tuy nhiên, mình cần thêm nhiều thông tin hơn giúp khái thác hiệu quả hơn, nào quan sát quá trình hoạt động khi server nhận được các request từ client qua các **routes** do lập trình viên tạo ra
 
 ![Imgur](https://i.imgur.com/sibWo0d.png)
 
@@ -67,7 +67,7 @@ Qua hình 4 ta thấy rằng lập trình viên tạo ra 2 tuyến
 
 _hình 5: Tuyến " / "_
 
-Ố ồ bạn thấy 27-28 chứ. Chúng ta sẽ không tấn công SQL Injection kiểu '1 or 1 = 1-- bởi vì đó chính là **"Placeholders"**.
+Ố ồ bạn thấy 27-28 chứ. Chúng ta sẽ không khai thác SQL Injection kiểu '1 or 1 = 1-- bởi vì đó chính là **"Placeholders"**.
 
 Vào cái mùa ra đường nắng bể đầu ở Sài Gòn thì dòng lệnh 28
 
