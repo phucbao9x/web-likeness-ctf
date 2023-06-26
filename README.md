@@ -31,12 +31,15 @@ _hình 1: Giao diện của đối tượng_
 Sau đó, mình tải/mở xem code tại route _/source_
 
 Nào cũng nhau phân tích code nhé
+
 ![Imgur](https://i.imgur.com/BFVrv9q.png)
+
 _hình 2: thư viện mà máy chủ sử dụng_
 
 Ở hình 2 ta thấy máy chủ sử dụng cơ sở dữ liệu SQLite và chạy trên nền tảng Flask.
 
 ![Imgur](https://i.imgur.com/eGqXCyB.png)
+
 _hình 3: code tại if \_\_name\_\_ == "\_\_main\_\_"_
 
 Khi máy chủ hoạt động ta thấy rằng nó sẽ:
@@ -48,7 +51,9 @@ Khi máy chủ hoạt động ta thấy rằng nó sẽ:
 Suy ra mục tiêu có thể được chinh phục với [SQL Injection](https://en.wikipedia.org/wiki/SQL_injection).
 
 Tuy nhiên, mình cần thêm nhiều thông tin hơn cho cuộc tấn công, nào quan sát quá trình hoạt động khi server nhận được các request từ client qua các **routes** do lập trình viên tạo ra
+
 ![Imgur](https://i.imgur.com/sibWo0d.png)
+
 _hình 4: Các routes do lập trình viên thiết lập_
 
 Qua hình 4 ta thấy rằng lập trình viên tạo ra 2 tuyến
@@ -57,7 +62,9 @@ Qua hình 4 ta thấy rằng lập trình viên tạo ra 2 tuyến
 -   Tuyến "/source"
 
 Đi sâu vào tuyến "/".
+
 ![Imgur](https://i.imgur.com/zfc0Kyw.png)
+
 _hình 5: Tuyến " / "_
 
 Ố ồ bạn thấy 27-28 chứ. Chúng ta sẽ không tấn công SQL Injection kiểu '1 or 1 = 1-- bởi vì đó chính là **"Placeholders"**.
@@ -71,7 +78,9 @@ request.args['lastname'].replace('%', '')
 đã tiếp cho mình 3.14 cây que kem ốc quế. Bởi vì dòng code này đang chứng minh rằng chúng quên thay thế ký tự underscore(\_)
 
 Thêm một đặt điểm mà chúng ta cần lưu ý đó là:<br>
+
 ![Imgur](https://i.imgur.com/AIEC1aP.png)
+
 Ý nghĩa: giới hạn lượng truy cập đối với route " / " là 5 lượt trên 1 giây.
 
 ---
@@ -89,13 +98,17 @@ Mình sẽ tìm địa chỉ IPv4 của máy chủ với
 Ngay sau đó mình kiểm tra các gói tin HTTP với host là **_103.97.125.53_** với wireshark để xem xét sự khác biệt nhằm đưa ra giải pháp/phương pháp truy tìm câu truy vấn tốt nhất.
 
 Thông qua quá trình kiểm tra ba gói tin khi truy cập trang web (hình 7), nhập ký tự bất kỳ (hình 8) và 5 dấu underscore (hình 9).
+
 ![Imgur](https://i.imgur.com/QfbEpaf.png)
+
 _hình 6_
 
 ![Imgur](https://i.imgur.com/7nlWUp5.png)
+
 _hình 7_
 
 ![Imgur](https://i.imgur.com/wJoTrEI.png)
+
 _hình 8_
 
 Qua 3 hình trên ta thấy đặc điểm dễ nhận biết nhất là sự khác biệt trong gói tin (text/html) nhận được, đó là có thẻ table và h2 với nội dung **Search Results.**.
@@ -103,6 +116,7 @@ Qua 3 hình trên ta thấy đặc điểm dễ nhận biết nhất là sự kh
 Đồng thời thông qua wireshark mình phát hiện máy chủ hoạt động trên cổng 80 (http)
 
 ![Imgur](https://i.imgur.com/lvq96qc.png)
+
 _hình 9_
 
 Như vậy, sau khi chúng ta phân tích xong thì thu được các kết quả như sau:
@@ -229,9 +243,11 @@ print(f"Good query >> {__tmpq.get()}")
 ```
 
 Kết quả:
+
 ![Imgur](https://i.imgur.com/0J4dr2H.png)
 
 Rồi copy và dán lên tìm thôi:
+
 ![Imgur](https://i.imgur.com/x3AYv2J.png)
 
 Tada vậy là mình đã chinh phục thành công. :partying_face: :partying_face: :partying_face:
