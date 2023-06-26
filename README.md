@@ -254,6 +254,6 @@ Tada vậy là mình đã chinh phục thành công. :partying_face: :partying_f
 
 
 ## Kết bài:
-Chân thành cảm ơn người anh **[Cookie hân hoan](https://www.facebook.com/cookie.han.hoan)** đã tạo ra sân chơi CTF đầy thú vị với nhiều dạng challenge để mọi người cũng nghiên cứu và try hard. Bản thân mình thì học tập được rất nhiều điều từ các challenge, và mình sẽ có gắng viết những writeup challenge khác hay hơn nữa. Nếu có góp ý và thắc mắc xin hãy thả thơ vào comment :smiling_face_with_three_hearts: 
+Chân thành cảm ơn người anh **[Cookie hân hoan](https://www.facebook.com/cookie.han.hoan)** đã tạo ra sân chơi CTF đầy thú vị với nhiều dạng challenge để mọi người cùng nghiên cứu và try hard. Bản thân mình thì học tập được rất nhiều điều từ các challenge, và mình sẽ có gắng viết những writeup challenge khác hay hơn nữa. Nếu có góp ý và thắc mắc xin hãy thả thơ vào comment :smiling_face_with_three_hearts: 
 
 Chúc mọi người một ngày try hard thành công
